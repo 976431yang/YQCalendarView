@@ -3,6 +3,8 @@
 #####iOS端 日历控件-可自定义外观
 -直接拖到工程中使用
 
+ ![image](https://github.com/976431yang/YQCalendarView/blob/master/DEMO/ScreenShot/screenshot.gif)
+
 ###Example Code:
 #####初始化：
 ```objective-c
@@ -27,7 +29,6 @@
                            @"2016-09-23",
                            ];
 ```
- ![image](https://github.com/976431yang/YQCalendarView/blob/master/DEMO/ScreenShot/screenshot.gif)
 
 ####自定义外观
 ```objective-c
@@ -54,7 +55,7 @@
 
     //下方日历的每一天的字体
     view.dayFont           = [UIFont systemFontOfSize:17];
-    
+
     //下方日历的每一天的字体颜色
     view.dayColor          = [UIColor blackColor];
 
