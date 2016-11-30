@@ -45,6 +45,13 @@
     }
 }
 
+-(UIColor *)dayColor{
+    return _dayColor?_dayColor:[UIColor blackColor];
+}
+-(void)setDayColor:(UIColor*)color{
+    _dayColor  = color;
+    self.lab.textColor = color;
+}
 
 -(instancetype)initWithFrame:(CGRect)frame{
     
@@ -69,6 +76,7 @@
     
     self.lab.textAlignment = NSTextAlignmentCenter;
     self.lab.numberOfLines = 0;
+    self.lab.textColor = self.dayColor;
     [self addSubview:self.lab];
     
     self.selectedIMGV = [[UIImageView alloc]initWithFrame:CGRectMake(0,

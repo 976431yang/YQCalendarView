@@ -325,6 +325,7 @@
                                                                      Height)];
         
         [eachdayView setTheDay:daystr.intValue];
+        eachdayView.dayColor = self.dayColor;
         [dayView addSubview:eachdayView];
         
         eachdayView.selectedIMG       = self.selectedIcon;
@@ -455,6 +456,9 @@
  *  加载日历显示
  */
 -(void)loadData{
+    for (UIView *subview in self.dayView.subviews) {
+        [subview removeFromSuperview];
+    }
     [self setUpTheDayView:self.dayView
                  ForMonth:self.showMonth
                      Year:self.showYear

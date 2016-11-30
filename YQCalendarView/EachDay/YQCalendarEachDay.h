@@ -15,6 +15,8 @@
     UIImage *_selectedIMG;
     //选中的背景色
     UIColor *_selectedBackColor;
+    //下方日期的颜色
+    UIColor *_dayColor;
 }
 
 -(UIImage *)selectedIMG;
@@ -23,7 +25,8 @@
 -(UIColor *)selectedBackColor;
 -(void)setSelectedBackColor:(UIColor *)color;
 
-
+-(UIColor *)dayColor;
+-(void)setDayColor:(UIColor *)color;
 
 /**
  *  设置是否被选中
