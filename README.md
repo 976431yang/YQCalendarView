@@ -29,6 +29,10 @@
                            @"2016-09-23",
                            ];
 ```
+#####单独添加选中个某一天
+```objective-c
+    [view AddToChooseOneDay:@"2016-08-10"];
+```
 
 ####自定义外观
 ```objective-c
