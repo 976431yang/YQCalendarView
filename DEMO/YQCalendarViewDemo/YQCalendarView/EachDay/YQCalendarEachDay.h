@@ -17,6 +17,8 @@
     UIColor *_selectedBackColor;
     //下方日期的颜色
     UIColor *_dayColor;
+    //日期信息String
+    NSString *_dateString;
 }
 
 -(UIImage *)selectedIMG;
@@ -27,6 +29,9 @@
 
 -(UIColor *)dayColor;
 -(void)setDayColor:(UIColor *)color;
+
+-(NSString *)dateString;
+-(void)setDateString:(NSString *)dateString;
 
 /**
  *  设置是否被选中

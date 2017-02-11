@@ -61,7 +61,19 @@
 
 
 ```
+####监听点击事件(可选)
+```objective-c
+    //遵循代理<YQCalendarViewDelegate>
+    view.delegate = self;
 
+    //接收点击的代理方法
+    //使用String格式，是为了避免因时区可能会导致的不必要的麻烦
+    -(void)YQCalendarViewTouchedOneDay:(NSString *)dateString{
+      NSLog(@"点击了：%@",dateString);
+    }
+
+
+```
 
 
 

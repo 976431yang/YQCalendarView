@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol YQCalendarViewDelegate <NSObject>
+
+-(void)YQCalendarViewTouchedOneDay:(NSString *)dateString;
+
+@end
+
 @interface YQCalendarView : UIView
 
 {
@@ -58,6 +64,8 @@
 -(UIImage *)preBTNIcon;
 -(void)setPreBTNIcon:(UIImage *)img;
 
+
+@property(nonatomic,strong) id <YQCalendarViewDelegate> delegate;
 
 //把某一天变为选中状态
 -(void)AddToChooseOneDay:(NSString *)dayStr;

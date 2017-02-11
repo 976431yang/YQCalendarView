@@ -10,7 +10,7 @@
 
 #import "YQCalendarView.h"
 
-@interface ViewController ()
+@interface ViewController ()<YQCalendarViewDelegate>
 
 @end
 
@@ -28,21 +28,21 @@
     [self.view addSubview:view];
     
     //设置选中的日期，格式 yyyy-MM-dd (数组)
-    view.selectedArray = @[@"2016-09-23",
-                           @"2016-09-21",
-                           @"2016-09-20",
-                           @"2016-09-15",
-                           @"2016-09-12",
-                           @"2016-10-05",
-                           @"2016-10-26",
-                           @"2016-10-29",
-                           @"2016-11-14",
-                           @"2016-11-20",
-                           @"2016-11-23",
+    view.selectedArray = @[@"2017-01-23",
+                           @"2017-01-21",
+                           @"2017-01-20",
+                           @"2017-01-15",
+                           @"2017-01-12",
+                           @"2017-02-05",
+                           @"2017-02-26",
+                           @"2017-02-29",
+                           @"2017-03-14",
+                           @"2017-03-20",
+                           @"2017-03-23",
                            ];
     
     //单独添加选中个某一天
-    [view AddToChooseOneDay:@"2016-12-10"];
+    [view AddToChooseOneDay:@"2017-02-10"];
     
     //--------------------------------------------------自定义显示
     
@@ -67,7 +67,14 @@
     view.dayColor          = [UIColor redColor];
     */
     
-    
+    //--------------------------------------------------如果需要接收点击后的代理
+    view.delegate = self;
+}
+
+//接收点击的代理方法
+//使用String格式，是为了避免因时区可能会导致的不必要的麻烦
+-(void)YQCalendarViewTouchedOneDay:(NSString *)dateString{
+    NSLog(@"点击了：%@",dateString);
 }
 
 - (void)didReceiveMemoryWarning {

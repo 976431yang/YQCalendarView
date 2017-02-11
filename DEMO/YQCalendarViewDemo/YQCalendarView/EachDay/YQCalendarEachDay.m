@@ -53,6 +53,13 @@
     self.lab.textColor = color;
 }
 
+-(NSString *)dateString{
+    return _dateString?_dateString:@"尚未赋值";
+}
+-(void)setDateString:(NSString *)dateString{
+    _dateString = dateString;
+}
+
 -(instancetype)initWithFrame:(CGRect)frame{
     
     self = [super initWithFrame:frame];
@@ -103,7 +110,6 @@
 
 -(void)setTheDay:(int)day{
     self.lab.text = [NSString stringWithFormat:@"%d",day];
-    
 }
 
 

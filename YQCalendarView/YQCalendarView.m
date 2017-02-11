@@ -326,17 +326,32 @@
         
         [eachdayView setTheDay:daystr.intValue];
         eachdayView.dayColor = self.dayColor;
+        NSString *formatMonthString = [NSString stringWithFormat:@"%d",month];
+        if(month<10){formatMonthString = [NSString stringWithFormat:@"0%d",month];}
+        NSString *formatDayString = [NSString stringWithFormat:@"%d",daystr.intValue];
+        if(daystr.intValue<10){formatDayString = [NSString stringWithFormat:@"0%d",daystr.intValue];}
+        eachdayView.dateString = [NSString stringWithFormat:@"%4d-%@-%@",year,formatMonthString,formatDayString];
         [dayView addSubview:eachdayView];
         
         eachdayView.selectedIMG       = self.selectedIcon;
         eachdayView.selectedBackColor = self.selectedBackColor;
-        
         
         NSString *checkString = [Checkformater stringFromDate:inputDate];
         if([self.selectedArray containsObject:checkString]){
             [eachdayView setTheSelectedMode:YES];
         }
         
+        //--------------------------------------------------手势
+        //添加双击手势
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dayTouched:)];
+        //设置出发操作需要的点按次数
+        tap.numberOfTapsRequired = 1;
+        //设置需要几根手指触发操作
+        tap.numberOfTouchesRequired = 1;
+        //把手势添加到视图上
+        [eachdayView addGestureRecognizer:tap];
+        
+        //--------------------------------------------------
         inputDate = [NSDate dateWithTimeInterval:24*60*60 sinceDate:inputDate];
         //        NSString *str = [EEEformater stringFromDate:inputDate];
         //        NSLog(@"%@",str);
@@ -475,6 +490,16 @@
 -(void)AddToChooseOneDay:(NSString *)dayStr{
     [self.selectedArray addObject:dayStr];
     [self loadData];
+}
+
+
+//点击手势
+-(void)dayTouched:(UITapGestureRecognizer *)recognizer{
+    NSString *dayString = ((YQCalendarEachDay *)(recognizer.view)).dateString;
+    //NSLog(@"%@",dayString);
+    if(self.delegate){
+        [self.delegate YQCalendarViewTouchedOneDay:dayString];
+    }
 }
 
 @end
