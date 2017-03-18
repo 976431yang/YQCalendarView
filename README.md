@@ -1,12 +1,12 @@
 # YQCalendarView
-####微博：畸形滴小男孩
-###iOS端 日历控件-可自定义外观
+#### 微博：畸形滴小男孩
+### iOS端 日历控件-可自定义外观
 -直接拖到工程中使用
 
  ![image](https://github.com/976431yang/YQCalendarView/blob/master/DEMO/ScreenShot/screenshot.gif)
 
-###Example Code:
-#####初始化：
+### Example Code:
+##### 初始化：
 ```objective-c
 	YQCalendarView *view = [[YQCalendarView alloc]initWithFrame:CGRectMake(20,
                                                                            100,
@@ -14,7 +14,7 @@
                                                                            300)];
     [self.view addSubview:view];
 ```
-#####设置选中的日期，格式 yyyy-MM-dd (数组)
+##### 设置选中的日期，格式 yyyy-MM-dd (数组)
 ```objective-c
     view.selectedArray = @[@"2016-08-23",
                            @"2016-08-21",
@@ -29,12 +29,12 @@
                            @"2016-09-23",
                            ];
 ```
-#####单独添加选中个某一天
+##### 单独添加选中个某一天
 ```objective-c
     [view AddToChooseOneDay:@"2016-08-10"];
 ```
 
-####自定义外观
+#### 自定义外观
 ```objective-c
 	//整体背景色
     view.backgroundColor   = [UIColor blueColor];
@@ -65,7 +65,7 @@
 
 
 ```
-####监听点击事件(可选)
+#### 监听点击事件(可选)
 ```objective-c
     //遵循代理<YQCalendarViewDelegate>
     view.delegate = self;
