@@ -65,7 +65,7 @@
 -(void)setPreBTNIcon:(UIImage *)img;
 
 
-@property(nonatomic,strong) id <YQCalendarViewDelegate> delegate;
+@property(nonatomic,weak) id <YQCalendarViewDelegate> delegate;
 
 //把某一天变为选中状态
 -(void)AddToChooseOneDay:(NSString *)dayStr;
